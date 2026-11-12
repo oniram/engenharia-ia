@@ -1,5 +1,17 @@
 # Playbook: bootstrap de engenharia com IA (Spec Kit + AGENTS + IDE)
 
+Deixa qualquer repositório pronto para um time que programa com agentes de IA. Em uma passagem, o projeto ganha um fluxo único — especificar, planejar, quebrar em tarefas e só então implementar — mais as regras, os comandos e os limites que o agente passa a seguir sozinho, no Cursor, no Claude ou no Copilot. Vale para um repo que já tem código e para um que ainda vai nascer.
+
+O Spec Kit é só o fluxo. Em volta dele, o playbook lê o projeto de verdade (stack, comandos, testes, deploy, áreas críticas e o que nunca vai para o git — ou o que você descreveu, se o repo ainda estiver vazio), escreve o manual do agente e fixa os limites deste repositório: o que fazer sempre, o que perguntar antes e o que nunca fazer. O mesmo contrato vale fora do Cursor, e um modo de atualização corrige o kit quando comando, pasta ou regra ficam desatualizados.
+
+Na prática, cria três peças que o agente passa a ler sozinho:
+
+- **`AGENTS.md`** na raiz — o que o produto é, como rodar, como publicar, testes e definição de pronto.
+- **Skills** em `.cursor/skills/speckit-*` — os comandos `/speckit-specify`, `/speckit-plan`, `/speckit-tasks` e `/speckit-implement`.
+- **Rules** em `.cursor/rules/*.mdc` — uma sempre ativa, uma por área crítica e, se houver processo claro, uma de deploy.
+
+Junto vêm a constitution em `.specify/`, as pontes `CLAUDE.md` e `.github/copilot-instructions.md`, uma doc curta para o time e o `.gitignore` versionando skills e rules.
+
 Documento **genérico e autocontido**. Não contém regras de domínio de nenhum produto — a IA deve preencher tudo a partir do workspace atual (ou do que o usuário definir, se o repo estiver vazio).
 
 ---
